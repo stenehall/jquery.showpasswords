@@ -39,7 +39,6 @@ jQuery.extend({
 					var id = this.id;
 	
 					var checkbox = '<input checked="checked" name="checkbox-'+id+'" type="checkbox" id="checkbox-'+id+'">';
-					console.log(checkbox);
 					jQuery(checkbox).insertAfter(this);
 					var password = '<input type="input" value="" id="'+options.prefix+id+'" name="'+options.prefix+id+'"><label for="'+options.prefix+id+'">'+options.label+'</label>';
 					jQuery(password).insertAfter(this);
@@ -48,12 +47,10 @@ jQuery.extend({
 					jQuery('#checkbox-'+id).change(
 						function() {
 							if(jQuery(this).is(':checked')){
-								console.log(jQuery('#'+id).attr('value'));
 								jQuery('#'+options.prefix+id).attr('value', jQuery('#'+id).attr('value'));
 								jQuery('#'+id).hide();
 								jQuery('#'+options.prefix+id).show();
 							} else {
-								console.log(jQuery('#'+options.prefix+id).attr('value'));
 								jQuery('#'+id).attr('value', jQuery('#'+options.prefix+id).attr('value'));
 								jQuery('#'+options.prefix+id).hide();
 								jQuery('#'+id).show();							
