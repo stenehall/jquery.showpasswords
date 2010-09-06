@@ -30,7 +30,8 @@ jQuery.extend({
 			// default configuration properties
 			var defaults = {
 				prefix : 'clear-',
-				label: 'Toggle'
+				label: 'Toggle',
+				clearOnFocus: true,
 			};
 			options = $.extend( defaults, options );
 		
@@ -57,6 +58,24 @@ jQuery.extend({
 							}
 						}
 					);
+					if(options.clearOnFocus) {
+						var valueInit = this.value;
+						console.log(valueInit);
+						jQuery('#'+options.prefix+id).focus(
+							function(){
+								if(this.value == valueInit) {
+									this.value = "";
+								}
+							}
+						);
+						jQuery('#'+id).focus(
+							function(){
+								if(this.value == valueInit) {
+									this.value = "";
+								}
+							}
+						);
+					}
 					jQuery(this).css('display', 'none');
 				}
 			);
