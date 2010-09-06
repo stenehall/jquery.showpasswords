@@ -12,7 +12,7 @@
  ***********************************
 
  jQuery(document).ready(function() {
- 	jQuery.showPasswords();
+	jQuery.showpasswords();
  });
 
  *
@@ -36,9 +36,10 @@ jQuery.extend({
 		
 			jQuery('input[type="password"]').each(
 				function() {
-					id = this.id;
+					var id = this.id;
 	
-					var checkbox = '<input checked="checked" id="checkbox-'+id+'" type="checkbox" id="checkbox-'+id+'>';
+					var checkbox = '<input checked="checked" name="checkbox-'+id+'" type="checkbox" id="checkbox-'+id+'">';
+					console.log(checkbox);
 					jQuery(checkbox).insertAfter(this);
 					var password = '<input type="input" value="" id="'+options.prefix+id+'" name="'+options.prefix+id+'"><label for="'+options.prefix+id+'>'+options.label+'</label>';
 					jQuery(password).insertAfter(this);
@@ -54,7 +55,7 @@ jQuery.extend({
 								jQuery('#'+id).show();							
 							}
 						}
-					)
+					);
 					jQuery(this).css('display', 'none');
 				}
 			);
