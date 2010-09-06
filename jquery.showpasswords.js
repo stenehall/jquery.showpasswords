@@ -30,7 +30,7 @@ jQuery.extend({
 			// default configuration properties
 			var defaults = {
 				prefix : 'clear-',
-				label: 'Toggle',
+				label: 'Show password',
 				clearOnFocus: true,
 			};
 			options = $.extend( defaults, options );
